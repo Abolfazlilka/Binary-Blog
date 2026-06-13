@@ -1,0 +1,8 @@
+1 - run this command
+pip install -r modules.txt
+
+2 - run this command
+python main.py
+
+3 - open localhost on port 5000 with PATH apidocs to see swaggerdocs:
+http://localhost:5000/apidocs/
