@@ -1,0 +1,21 @@
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 30px;
+    margin-top: 20px;
+}
+
+aside {
+    border: 1px solid;
+    padding: 10px;
+}
+
+
+#cover {
+    width: 100%;
+}
+
+article {
+    grid-column: 2 / 4;
+}

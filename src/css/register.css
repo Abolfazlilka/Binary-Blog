@@ -1,0 +1,76 @@
+main {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 50px;
+    padding-inline: 50px;
+}
+
+.form-container {
+    width: 520px;
+}
+
+form {
+    border: 2px solid;
+}
+
+form h2 {
+    text-align: center;
+    border-bottom: 2px solid;
+    padding: 10px 0;
+    font-size: 42px;
+}
+
+.form-content{
+    display: flex;
+    flex-direction: column;
+    padding: 18px;
+    gap: 20px;
+}
+
+.form-content div {
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+    gap: 5px;
+}
+
+label {
+    font-size: 28px;
+}
+
+input {
+    padding: 10px;
+}
+
+button {
+    padding: 10px;
+    outline: 0;
+    border: none;
+    color: white;
+    background-color: black;
+    font-size: 24px;
+font-weight: bold;
+}
+
+.tabs {
+    display: flex;
+    align-items: center;
+    border: 2px solid;
+    margin-bottom: 10px;
+}
+
+.tabs a {
+    flex-grow: 1;
+    text-align: center;
+    padding: 10px;
+    font-size: 26px;
+    color: black;
+    font-weight: bold;
+}
+
+.tabs a:first-child{
+    border-right: 1px solid;
+    background-color: #3C3C3C;
+    color: white;
+}

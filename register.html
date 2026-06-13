@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/header.css">
+    <link rel="stylesheet" href="./src/css/main.css">
+    <link rel="stylesheet" href="./src/css/register.css">
+    <title>Blog Init - Register</title>
+</head>
+<body>
+    <header>
+        <div class="logo-div">
+            <div class="header-link-container">
+                <a href="#">بروز ترین مقالات</a>
+                <a href="#">ارتباط با ما</a>
+            </div>
+            <div class="logo-container">
+                <div>
+                    <a href="./index.html">
+                        <h1>باینری بلاگ</h1>
+                        <img src="./images/Logo.svg" alt="Blog Init">
+                    </a>
+                </div>
+            </div>
+            <div class="header-link-container">
+                <a href="./register.html">ثبت نام</a>
+                <a href="./login.html">ورود</a>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">دیتابیس های نوبن</a></li>
+                <li><a href="#">امنیت و لینوکس</a></li>
+                <li><a href="#">معماری نرم افزار</a></li>
+                <li><a href="#">هوش‌مصنوعی و داده</a></li>
+                <li><a href="#">طراحی سایت و اپلیکیشن</a></li>
+                <li><a href="#">دیتاساینس</a></li>
+                <li><a href="#">DEVOPS</a></li>
+                <li><a href="#">پروتکل‌ها و شبکه</a></li>
+                <li><a href="#">تازه های تکنولوژی</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div>
+            <img src="./images/register.svg" alt="">
+        </div>
+        <div class="form-container">
+            <div class="tabs">
+                <a href="./register.html">ثبت نام</a>
+                <a href="./login.html">ورود</a>
+            </div>
+        <form>
+            <h2>ثبت نام</h2>
+            <div class="form-content">
+            <div>
+                <label for="fullname">نام و نام خانوادگی</label>
+                <input type="text" required id="fullname" dir="rtl" placeholder="نام و نام خانوادگی خود را وارد کنید">
+            </div>
+            <div>
+                <label for="email">ایمیل</label>
+                <input type="text" required id="email" dir="rtl" placeholder="ایمیل خود را وارد کنید">
+            </div>
+            <div>
+                <label for="password">رمز عبور</label>
+                <input type="text" required id="password" dir="rtl" placeholder="رمز عبور خود را وارد کنید">
+            </div>
+            <p id="message"></p>
+            <button type="submit">ورود</button>
+            </div>
+        </form>
+        </div>
+    </main>
+    <script src="./src/js/register.js"></script>
+</body>
+</html>
