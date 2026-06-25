@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded' , event => {
 const articleEl = document.querySelector('article')
 
 async function fetchBlogs(){
-    await fetch('http://localhost:5000/allposts' , {
+    await fetch('/allposts' , {
         method: "GET",
     }).then(res => res.json())
     .then(data => {
@@ -21,7 +21,7 @@ function createBlogCard(blog){
     const blogCard = `
     <a href="./blog.html?id=${blog.id}" target="_blank" class="blog-card">
         <div class="blog-card-image">
-            <img src="http://localhost:5000/${blog.image}" alt="${blog.title}">
+            <img src="${blog.image}" alt="${blog.title}">
         </div>
         <div class="blog-card-author">
             <p>${blog.published_at.split('T')[0]}</p>

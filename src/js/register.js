@@ -10,7 +10,7 @@ formElement.addEventListener('submit', (event) => {
 });
 
 async function register(name , email , password){
-   await fetch("http://localhost:5000/register" , {
+   await fetch("/register" , {
     method: "POST",
     body: JSON.stringify({
         "email": email,

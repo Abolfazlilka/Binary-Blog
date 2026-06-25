@@ -9,7 +9,7 @@ formElement.addEventListener('submit', (event) => {
 });
 
 async function login(email , password){
-   await fetch("http://localhost:5000/login" , {
+   await fetch("/login" , {
     method: "POST",
     body: JSON.stringify({
         "email": email,
