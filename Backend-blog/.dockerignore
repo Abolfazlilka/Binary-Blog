@@ -1,0 +1,8 @@
+__pycache__
+*.py[cod]
+*.db
+instance/
+images/
+venv/
+.git
+howToRun.txt
