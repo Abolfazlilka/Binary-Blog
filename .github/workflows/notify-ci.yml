@@ -1,0 +1,49 @@
+name: Notify CI Result
+
+on:
+  workflow_run:
+    workflows:
+      - CI
+      - Deploy
+    types:
+      - completed
+
+jobs:
+  success:
+    if: github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Notify Success
+        uses: appleboy/telegram-action@master
+        with:
+          format: markdown
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          disable_notification: true
+          message: |
+            ✅ **${{ github.event.workflow_run.name }} passed**
+
+            Repo: `${{ github.repository }}`
+            Branch: `${{ github.event.workflow_run.head_branch }}`
+
+            ${{ github.event.workflow_run.html_url }}
+
+  failure:
+    if: github.event.workflow_run.conclusion == 'failure'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Notify Failure
+        uses: appleboy/telegram-action@master
+        with:
+          format: markdown
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            ❌ **${{ github.event.workflow_run.name }} failed**
+
+            Repo: `${{ github.repository }}`
+            Branch: `${{ github.event.workflow_run.head_branch }}`
+
+            ${{ github.event.workflow_run.html_url }}
