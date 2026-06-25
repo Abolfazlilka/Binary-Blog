@@ -6,11 +6,17 @@ services:
 
     container_name: blog-backend
 
+    environment:
+      FLASK_HOST: 0.0.0.0
+      FLASK_DEBUG: "false"
+      SQLALCHEMY_DATABASE_URI: sqlite:////app/instance/blog.db
+
     volumes:
       - ./Backend-blog/instance:/app/instance
+      - ./Backend-blog/images:/app/images
 
-    ports:
-      - "5000:5000"
+    expose:
+      - "5000"
 
     restart: unless-stopped
 
@@ -23,7 +29,12 @@ services:
       - "80:80"
 
     volumes:
-      - ./:/usr/share/nginx/html:ro
+      - ./index.html:/usr/share/nginx/html/index.html:ro
+      - ./blog.html:/usr/share/nginx/html/blog.html:ro
+      - ./login.html:/usr/share/nginx/html/login.html:ro
+      - ./register.html:/usr/share/nginx/html/register.html:ro
+      - ./src:/usr/share/nginx/html/src:ro
+      - ./images:/usr/share/nginx/html/images:ro
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
 
     depends_on:
