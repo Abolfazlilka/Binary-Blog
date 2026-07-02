@@ -2,7 +2,7 @@ services:
 
   backend:
     build:
-      context: ./Backend-blog
+      context: ./backend
 
     container_name: blog-backend
 
@@ -12,8 +12,8 @@ services:
       SQLALCHEMY_DATABASE_URI: sqlite:////app/instance/blog.db
 
     volumes:
-      - ./Backend-blog/instance:/app/instance
-      - ./Backend-blog/images:/app/images
+      - ./backend/instance:/app/instance
+      - ./backend/images:/app/images
 
     expose:
       - "5000"
@@ -29,12 +29,7 @@ services:
       - "80:80"
 
     volumes:
-      - ./index.html:/usr/share/nginx/html/index.html:ro
-      - ./blog.html:/usr/share/nginx/html/blog.html:ro
-      - ./login.html:/usr/share/nginx/html/login.html:ro
-      - ./register.html:/usr/share/nginx/html/register.html:ro
-      - ./src:/usr/share/nginx/html/src:ro
-      - ./images:/usr/share/nginx/html/images:ro
+      - ./frontend:/usr/share/nginx/html:ro
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
 
     depends_on:
