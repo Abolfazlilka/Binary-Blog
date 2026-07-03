@@ -1,2 +1,3 @@
 .telegram-token
 .telegram-to
+__pycache__/
